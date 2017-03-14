@@ -340,7 +340,7 @@ function bookSlider(e){
 //delete all books in slider
 function emptySlider(){
     let books = row.children;
-    for(let i = 1; i < books.length; i++){
+    for(let i = 2; i < books.length; i++){
         row.removeChild(books[i]);  
     }
 }
