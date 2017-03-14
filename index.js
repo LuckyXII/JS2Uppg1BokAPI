@@ -292,6 +292,9 @@ function printBooks(result){
         }
         //delete books when X is clicked
         deleteBooksOnClick();
+        
+        //empty slider
+        emptySlider();
         //add books to slider
         createBooksSlider(result);
         
@@ -299,6 +302,8 @@ function printBooks(result){
         getAllBooks();
     }
 }
+
+
 //Print book
 function printLayout(result,index){
     let data;
@@ -317,7 +322,6 @@ function printLayout(result,index){
 //Slider
 function bookSlider(e){
     let target = e.target.className;
-    let row = document.getElementById("row");
     let lastChild = row.lastChild;
     let firstChild = row.children[2];
     
@@ -331,6 +335,16 @@ function bookSlider(e){
     isWrapped("bookCover",0,true);
     isWrapped("bookCover",1,false);
 }
+
+
+//delete all books in slider
+function emptySlider(){
+    let books = row.children;
+    for(let i = 0; i < books.length; i++){
+        row.removeChild(books[i]);  
+    }
+}
+
 //input new book values
 function newBook(){
     if(plusIcon.style.color != "gold"){
