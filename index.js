@@ -109,11 +109,12 @@ function searchResults(results){
             author = titleResults[i].volumeInfo.authors;
             if(author !== undefined){
                 addBook(APIKey,title,author[0],printResult);
-                addGoogleBooks(results,title,author);
+                
+                //addGoogleBooks(results,title,author);
             }
         } 
+        getAllBooks();
     }
-    console.log(bookResults);
 }
 function printResult(results){
     console.log(results);
@@ -128,7 +129,7 @@ function findBooksOnline(){
     let key = searchBar.value.toLowerCase();
     searchExternalBooks(key,googleKey,searchResults);  
 }
-
+/*
 function addGoogleBooks(result,title,author){
     let row = document.getElementById("row");
     let lastChild;
@@ -146,11 +147,11 @@ function addGoogleBooks(result,title,author){
     }
     else if(result.status == "error"){
         console.log("failed: trying again");
-        addBook(APIKey,title[0].value,author[1].value,addGoogleBooks);
+        addBook(APIKey,title[0].value,author[1].value,searchResults);
         
     }
 }
-
+*/
 //find localy stored books
 function findBooks(elm){
     let key;
