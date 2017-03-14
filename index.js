@@ -65,7 +65,8 @@ function WidthChangeSmall(mqs){
 validateKey(APIKey);
 hideAndUnHideBooks("onresize",window);
 hideAndUnHideBooks("onload",window);
-getAllBooks();
+
+
 findBooks(searchBar);
 
 //==================================================================================
@@ -94,7 +95,12 @@ lookingGlass.addEventListener("click", findBooksOnline);
 //Get books from google
 
 function searchExternalBooks(searchWord,key,callback){
-    ajaxCall("GET","https://www.googleapis.com/books/v1/volumes?q="+searchWord+"&key="+key,callback);
+    if(APIKey == "000000" || APIKey === null){
+        console.log("No APIKey Present");
+        alert("No APIKey Present");
+    }else{
+        ajaxCall("GET","https://www.googleapis.com/books/v1/volumes?q="+searchWord+"&key="+key,callback);
+    }
 }
 function searchResults(results){
     googleBooksData = results;
@@ -237,22 +243,34 @@ function deleteBook(elm,ID){
 }
 //Remove book from database
 function deleteID(ID){
-    ajaxCall("POST","https://www.forverkliga.se/JavaScript/api/crud.php?op=delete&key="+APIKey+"&id="+ID,(result)=>{
+    if(APIKey == "000000" || APIKey === null){
+        console.log("No APIKey Present");
+        alert("No APIKey Present");
+    }else{
+        ajaxCall("POST","https://www.forverkliga.se/JavaScript/api/crud.php?op=delete&key="+APIKey+"&id="+ID,(result)=>{
         if(result.status == "error"){
             deleteID(ID);
             console.log(JSON.stringify(result));
         }
     });
+    }
+    
+    
 }
 //END
 //----------------------------------------
 //Update Books
 function updateBookInfo(ID,title,author){
-     ajaxCall("POST","https://www.forverkliga.se/JavaScript/api/crud.php?op=update&key="+APIKey+"&id="+ID+"&title="+title+"&author="+author,(result)=>{
+    if(APIKey == "000000" || APIKey === null){
+        console.log("No APIKey Present");
+        alert("No APIKey Present");
+    }else{
+       ajaxCall("POST","https://www.forverkliga.se/JavaScript/api/crud.php?op=update&key="+APIKey+"&id="+ID+"&title="+title+"&author="+author,(result)=>{
             if(result.status == "error"){
                 updateBookInfo(ID,title,author);
             }
         });
+    }  
 }
 function inputFields(elm,inputAuthor,infoAuthor,inputTitle,infoTitle,updateBook){
     let timeout = null;
@@ -277,7 +295,12 @@ function inputFields(elm,inputAuthor,infoAuthor,inputTitle,infoTitle,updateBook)
 //----------------------------------------
 //Print All Books
 function getAllBooks(){
-    ajaxCall("GET", "https://www.forverkliga.se/JavaScript/api/crud.php?op=select&key="+APIKey,printBooks);
+    if(APIKey == "000000" || APIKey === null){
+        console.log("No APIKey Present");
+        alert("No APIKey Present");
+    }else{
+      ajaxCall("GET", "https://www.forverkliga.se/JavaScript/api/crud.php?op=select&key="+APIKey,printBooks);
+    }
 }
 function printBooks(result){
     let allBooks = document.getElementById("allBooks");
@@ -376,8 +399,13 @@ function newBook(){
 }
 //Add New Book
 function addBook(key, title, author,callback){
-    ajaxCall("POST","https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key="+key+"&title="+title+"&author="+author,callback);
-    hideAndUnHideBooks("onClick",plusIcon);
+    if(APIKey == "000000" || APIKey === null){
+        console.log("No APIKey Present");
+        alert("No APIKey Present");
+    }else{
+      ajaxCall("POST","https://www.forverkliga.se/JavaScript/api/crud.php?op=insert&key="+key+"&title="+title+"&author="+author,callback);
+      hideAndUnHideBooks("onClick",plusIcon);
+    }
 }
 function addSucessful(result){
     let row = document.getElementById("row");
@@ -600,7 +628,10 @@ function saveAPIKey(result){
     APIKey = localStorage.getItem("APIKey");
 }
 function validateKey(key){
- if(key === null){
-     localStorage.setItem("APIKey","000000");
- }   
+    if(key === null){
+        localStorage.setItem("APIKey","000000");
+    }
+    else if(key != "000000" && key !== null){
+        getAllBooks();
+    }
 }
