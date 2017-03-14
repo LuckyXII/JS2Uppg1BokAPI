@@ -166,7 +166,7 @@ function showMatchingBooks(key){
     let title,author,keyString ="",titleString ="",authorString ="";
     let bookInfo = document.getElementsByClassName("bookInfo");
     if(bookInfo.length !== 0){
-        for(let i = 0; i < allBooksData.data.length; i++){
+        for(let i = 0; i < bookInfo.length; i++){
             keyString="";
             titleString="";
             authorString="";
