@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Javascript2 Inlämningsuppgift 1 BokAPI </title>
+        <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/e4978cdcf5.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="allBooks" style="display:none">
+            <img src="img/oldPaper.jpg" alt="paper">
+            <div></div>
+             <i id="closeAllBooks" class="deleteIcon fa fa-times fa-4x" aria-hidden="true"></i>
+        </div>
+        <header>
+            <div id="logo"><img src="img/logo.png" alt="Esperance"/></div>
+            <div id="APIKey"><i class="keyIcon fa fa-key fa-5x" aria-hidden="true"></i></div>
+        </header>
+        <main>
+            <div id="row">
+                <img id="shadow" src="img/shadow.png" alt="shadow"/>
+                <div id="addBook">
+                   <div id="addInfo">
+                        <textarea hidden="true" class="addTitle" placeholder="Title" style="width: 120px; height: auto; margin-right: 20px; margin-left: 10px; margin-bottom: 30px; transform: rotate(-3deg);"></textarea>
+                        <h3 class="addTitle">Add Book</h3>
+                        <i id="plus" class="fa fa-plus fa-5x" aria-hidden="true"></i>
+                        <h5 class="addAuthor">Author</h5>
+                        <input hidden="true" class="addAuthor" placeholder="Author" style="width: 110px; margin-right: 20px; margin-left: 10px; transform: rotate(7deg);">
+                    </div>
+                    <img src="img/bookCover.png" alt="bookcover">
+                </div>
+            </div>
+            
+            <div id="shelf">
+                <img class="arrow arrowL"  src="img/arrowL.png" alt="arrow">
+                <div id="searchContainer">
+                    <i id="lookingGlass" class="shelfIcons fa fa-search fa-4x" aria-hidden="true"></i>
+                    <input id="searchBar" type="text" name="searchBar" hidden="true"/>
+                </div>
+                <i id="bookList" class="shelfIcons fa fa-book fa-4x" aria-hidden="true"></i>
+                <img class="arrow arrowR" src="img/arrowR.png" alt="arrow">
+            </div>
+            
+        </main>
+        <footer>
+            
+        </footer>
+
+       
+        <script src="index.js"></script>
+    </body>
+</html>

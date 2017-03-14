@@ -1,0 +1,473 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.fa:hover{
+    cursor: pointer;
+}
+
+/*******************************************HEADER******************************************/
+header{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom:5vh;
+}
+
+#logo{
+    width: 40%;
+}
+#logo img{
+    -webkit-box-flex:  1;
+    -ms-flex:  1 1 auto;
+    flex:  1 1 auto;
+    width:100%;
+    height: auto;
+}
+
+#APIKey{
+   -ms-flex-line-pack: end;
+   align-content: flex-end;
+    
+}
+
+#APIKey i {
+    position: relative;
+    -webkit-box-flex:  1;
+    -ms-flex:  1 1 auto;
+    flex:  1 1 auto;
+}
+
+.keyIcon:hover{
+    cursor: pointer;
+    -webkit-animation-name: keyIcon;
+    animation-name: keyIcon;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-transition-timing-function: cubic-bezier(.24,.51,.72,.46);
+    transition-timing-function: cubic-bezier(.24,.51,.72,.46);
+}
+i.fa:active{
+    color: gold;
+}
+
+/************************************HEADER END / MAIN START********************************/
+
+#allBooks{
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width:100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    height: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    z-index: 10;
+    background-color: rgba(140,120,80,0.4);
+}
+#allBooks img{
+    margin-top: 5%;
+    position: absolute;
+    width:100%;
+    height: 80%;
+    z-index: 11;
+
+}
+#allBooks div{
+    margin-top: 6%;
+    position: absolute;
+    z-index: 12;
+    overflow-y:auto;
+    height:65%
+}
+#allBooks div p{
+    margin:0;
+}
+
+#closeAllBooks{
+    position: absolute;
+    color: #740101;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.deleteIcon{
+    cursor: pointer;
+}
+
+#shadow{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    
+}
+
+#row{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 310px;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
+    
+    
+}
+
+#addBook{
+    float: right;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    width: 200px;
+    height:300px;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #9C0101;
+}
+
+#addBook img{
+    position: absolute;
+    height: 300px;
+    width:auto;
+    z-index: 0;
+}
+
+#plus{
+    color: #740101;
+    cursor: pointer;
+}
+
+#addInfo{
+    width:100%;
+    text-align: center;
+    z-index: 5;
+}
+
+.addTitle{
+    -webkit-transform: rotate(-2deg);   
+    transform: rotate(-2deg);
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.addAuthor{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    -webkit-transform: rotate(5deg);   
+    transform: rotate(5deg);
+}
+.addID{
+    margin-top: 10px;
+    -webkit-transform: rotate(4deg);   
+    transform: rotate(4deg);
+}
+
+.bookCover{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    width: 180px;
+    height: 300px;
+    margin:0;
+}
+
+.bookInfo{
+    width:100%;
+    text-align: center;
+    z-index: 5;
+}
+
+.coverPic{
+    position: absolute;
+    height: 300px;
+    width: auto;
+    z-index: 0;
+}
+
+.bookCover h3:hover,.bookCover h5:hover, #lookingGlass:hover,
+#bookList:hover{
+    color: gold;
+}
+
+.arrow{
+    width: 75px;
+    height:75px;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+.arrow:hover{
+    -webkit-animation-name: arrows;
+    animation-name: arrows;
+     -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+  
+}
+
+.arrowL{
+    float:left;
+}
+.arrowR{
+    float: right;
+}
+#shelf{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.shelfIcons{
+    
+    margin-top: 50px;
+}
+#lookingGlass{
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    -ms-grid-row-align: flex-end;
+    align-items: flex-end;
+}
+
+#searchBar{
+    height: 20px;
+}
+
+/************************************MAIN END / FOOTER START********************************/
+
+
+/***********************************Keyframes and mediaQuerys******************************/
+
+/*-------------------- Tablet Media --------------------------*/
+@media screen and (max-width: 925px){
+    header{
+        height:150px;
+    }
+    
+    #addBook{
+        float: right;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        width: 133px;
+        height:200px;
+        margin: 0;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        color: #9C0101;
+    }
+
+    #addBook img{
+        position: absolute;
+        height: 200px;
+        width:auto;
+        z-index: 0;
+    }
+
+    #plus{
+        color: #740101;
+        cursor: pointer;
+    }
+
+    #addInfo{
+        width:100%;
+        text-align: center;
+        z-index: 5;
+    }
+
+    .addTitle{
+        -webkit-transform: rotate(-2deg);   
+        transform: rotate(-2deg);
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+
+    .addAuthor{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        -webkit-transform: rotate(5deg);   
+        transform: rotate(5deg);
+    }
+    .addID{
+        margin-top: 10px;
+        -webkit-transform: rotate(4deg);   
+        transform: rotate(4deg);
+    }
+
+    .bookCover{
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        width: 123px;
+        height: 200px;
+        margin:0;
+    }
+
+    .bookInfo{
+        width:100%;
+        text-align: center;
+        z-index: 5;
+    }
+    
+    .coverTitle{
+       font-size: 0.7em;
+        width: 100px !important;
+        margin-top: 20px !important;
+        margin-bottom: 60px !important;
+    }
+    .coverAuthor{
+        font-size: 0.6em;
+        width: 100px !important;
+        margin-top: 5px !important;
+        margin-bottom: 0px !important;
+    }
+    .coverID{
+        font-size: 0.5em;
+        width: 100px !important;
+        margin-top: 5px !important;
+        margin-bottom: 0px !important;
+    }
+
+    .coverPic{
+        position: absolute;
+        height: 200px;
+        width: auto;
+        z-index: 0;
+    }
+
+    .arrow{
+        width: 50px;
+        height:50px;
+        margin-left: 50px;
+        margin-right: 50px;
+        margin-top: 0px;
+        cursor: pointer;
+    }
+  
+    
+    #shadow{
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    
+    }
+    
+    #shelf{
+        height: 60px;
+        margin-top: 10px;
+    }
+    .shelfIcons{
+        margin-top: 2px;
+    }
+}
+/*END tablet media*/
+
+/* bouncing Key */
+@-webkit-keyframes keyIcon{
+     0%{top: 0px;}
+    50%{top:15px;}
+    100%{top:0px;}
+}
+@keyframes keyIcon{
+     0%{top: 0px;}
+    50%{top:15px;}
+    100%{top:0px;}
+}
+
+/* Arrow animation */
+@-webkit-keyframes arrows{
+    0%{-webkit-transform: rotate(0);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(4deg);transform: rotate(4deg);} 
+    100%{-webkit-transform: rotate(-4deg);transform: rotate(-4deg);}
+   
+   
+}
+@keyframes arrows{
+    0%{-webkit-transform: rotate(0);transform: rotate(0deg);}
+    50%{-webkit-transform: rotate(4deg);transform: rotate(4deg);} 
+    100%{-webkit-transform: rotate(-4deg);transform: rotate(-4deg);}
+   
+}
